@@ -16,6 +16,10 @@ try
             string selectedDomain = Console.ReadLine();
             if (selectedDomain.ToLower() == "exit")
                 break;
+            //Remove unnecessary https and http
+            if (selectedDomain[4] == 's') selectedDomain = selectedDomain.Substring(8);
+            if (selectedDomain[4] == ':') selectedDomain = selectedDomain.Substring(7);
+
             sw.WriteLine($"0.0.0.0    {selectedDomain}");
         }
 
